@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button'; // ShadCN Button
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
 
 
@@ -39,20 +40,20 @@ const Navbar = () => {
 
         {/* Links */}
         <div className="flex items-center space-x-6">
-          <a
+          <Link
             href="/"
             className="text-gray-700 hover:text-blue-500 font-medium transition duration-150"
           >
             Home
-          </a>
+          </Link>
           {!userData &&
             <>
-              <a href="/auth/signUp" className="text-gray-700 hover:text-blue-500">
+              <Link href="/auth/signUp" className="text-gray-700 hover:text-blue-500">
                 Sign Up
-              </a>
-              <a href="/auth/signIn" className="text-gray-700 hover:text-blue-500">
+              </Link>
+              <Link href="/auth/signIn" className="text-gray-700 hover:text-blue-500">
                 Sign In
-              </a>
+              </Link>
             </>
           }
 
