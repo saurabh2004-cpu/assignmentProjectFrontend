@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import Navbar from '@/components/ui/Navbar';
 import { UserCard } from '@/components/UserCard';
 import { useDispatch } from 'react-redux';
-import { setUser } from './store/userSlice';
+import { setUser } from '.././store/userSlice';
 import { Loader2 } from 'lucide-react';
 
 interface FormData {
