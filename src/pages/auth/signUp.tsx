@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { Loader2 } from 'lucide-react';
+import Link from 'next/link';
 
 interface SignupFormData {
   username: string;
@@ -128,9 +129,9 @@ const Signup = () => {
        
         <p className="text-sm text-center text-gray-600">
           Already have an account?{' '}
-          <a href="/auth/signIn" className="text-indigo-600 hover:underline">
+          <Link href="/auth/signIn" className="text-indigo-600 hover:underline">
             Log In
-          </a>
+          </Link>
         </p>
         
         

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
-import { useState } from 'react';
 import { MoreVertical } from 'lucide-react';
 import {
   DropdownMenu,

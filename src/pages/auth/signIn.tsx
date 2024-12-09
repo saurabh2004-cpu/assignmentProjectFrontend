@@ -24,7 +24,7 @@ const SignIn: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data: SignInFormData) => {
-
+    setLoading(true)
     console.log("data", data)
     try {
       const response = await axios.post('http://localhost:4000/api/auth/sign-in', data, { withCredentials: true });
@@ -35,8 +35,8 @@ const SignIn: React.FC = () => {
         console.log('Signin successful');
       }
 
+      setLoading(false)
       router.push('/');
-
     } catch (error) {
       console.error('Error signing in:', error);
     }
@@ -93,7 +93,7 @@ const SignIn: React.FC = () => {
           disabled={loading}
           className="w-full bg-blue-500 text-white font-medium py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-          {loading ?  <Loader2 className="animate-spin" /> : 'Sign In'}
+          {loading ? <Loader2 className="animate-spin" /> : 'Sign In'}
         </Button>
 
         <Button

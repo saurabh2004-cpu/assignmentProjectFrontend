@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from "next/router";
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Button, } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Navbar from '@/components/ui/Navbar';
 import { UserCard } from '@/components/UserCard';
 import { useDispatch } from 'react-redux';
 import { setUser } from './store/userSlice';
-import { Loader, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 
 interface FormData {
   username: string;
