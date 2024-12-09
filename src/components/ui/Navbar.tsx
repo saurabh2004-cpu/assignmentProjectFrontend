@@ -46,7 +46,6 @@ const Navbar = () => {
           >
             Home
           </Link>
-          {!userData &&
             <>
               <Link href="/auth/signUp" className="text-gray-700 hover:text-blue-500">
                 Sign Up
@@ -55,7 +54,6 @@ const Navbar = () => {
                 Sign In
               </Link>
             </>
-          }
 
           {userData &&
             <>
