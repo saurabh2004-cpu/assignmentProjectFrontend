@@ -36,7 +36,7 @@ const Index = () => {
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/auth/getCurrentUser', { withCredentials: true });
+        const response = await axios.get('https://assignmentprojectbackend-1.onrender.com/api/auth/getCurrentUser', { withCredentials: true });
 
         console.log("current user", response);
         setCurrentUser(response?.data.user);
@@ -61,7 +61,7 @@ const Index = () => {
     const fetchUserData = async () => {
       try {
 
-        const response = await axios.get('http://localhost:4000/api/userData/getUserData', { withCredentials: true });
+        const response = await axios.get('https://assignmentprojectbackend-1.onrender.com/api/userData/getUserData', { withCredentials: true });
         if (response.data.userData) {
           setUserData(response.data.userData)
         }
@@ -95,7 +95,7 @@ const Index = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:4000/api/userData/createUserData', {
+      const response = await axios.post('https://assignmentprojectbackend-1.onrender.com/api/userData/createUserData', {
         username: data.username,
         lastName: data.lastName,
         userImage: data.userImage[0],
@@ -105,8 +105,7 @@ const Index = () => {
         },
         withCredentials: true
       });
-
-      setLoading(false);
+      
       console.log("userdata uploaded", response);
       reset();
       setUserData(response.data.userData);
@@ -114,6 +113,8 @@ const Index = () => {
       setCurrentTab("User Data")
     } catch (error: any) {
       console.error("Error uploading user data:", error?.message);
+    }finally{
+      setLoading(false);
     }
   }
 

@@ -22,7 +22,7 @@ export function UserCard({ username, lastName, userImage }: UserCardProps) {
 
   const handleDelete = () => {
     try {
-      const response = axios.delete('http://localhost:4000/api/userData/deleteUserData', { withCredentials: true });
+      const response = axios.delete('https://assignmentprojectbackend-1.onrender.com/api/userData/deleteUserData', { withCredentials: true });
 
       if(response){
         console.log("response", response);

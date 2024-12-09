@@ -27,7 +27,7 @@ const SignIn: React.FC = () => {
     setLoading(true)
     console.log("data", data)
     try {
-      const response = await axios.post('http://localhost:4000/api/auth/sign-in', data, { withCredentials: true });
+      const response = await axios.post('https://assignmentprojectbackend-1.onrender.com/api/auth/sign-in', data, { withCredentials: true });
       console.log("response", response);
 
       if (response) {
@@ -35,15 +35,16 @@ const SignIn: React.FC = () => {
         console.log('Signin successful');
       }
 
-      setLoading(false)
       router.push('/');
     } catch (error) {
       console.error('Error signing in:', error);
+    }finally{
+      setLoading(false);
     }
   };
 
   const handleLogInWithGoogle = async () => {
-    window.location.href = 'http://localhost:4000/api/auth/google';
+    window.location.href = 'https://assignmentprojectbackend-1.onrender.com/api/auth/google';
   }
 
   return (

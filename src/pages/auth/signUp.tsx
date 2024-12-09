@@ -27,23 +27,24 @@ const Signup = () => {
   const onSubmit = async (data: SignupFormData) => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:4000/api/auth/signup',
+      const response = await axios.post('https://assignmentprojectbackend-1.onrender.com/api/auth/signup',
         data,
         { withCredentials: true }
       );
 
       if (response) {
-        setLoading(false);
         console.log('Signup successful');
         router.push('/');
       }
     } catch (error) {
       console.error('Error signing up:', error);
+    }finally{
+      setLoading(false);
     }
   };
 
   const handleGoogleSignUP = () => {
-    window.location.href = 'http://localhost:4000/api/auth/google';
+    window.location.href = 'https://assignmentprojectbackend-1.onrender.com/api/auth/google';
   };
   
 

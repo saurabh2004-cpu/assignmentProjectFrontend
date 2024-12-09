@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post('http://localhost:4000/api/auth/logout', { withCredentials: true });
+      const response = await axios.post('https://assignmentprojectbackend-1.onrender.com/api/auth/logout', { withCredentials: true });
       console.log(response);
       alert('Logged out successfully');
 
